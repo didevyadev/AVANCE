@@ -18,9 +18,15 @@ function App() {
     <Grid container className={classes.root2} spacing={5}>
         <Grid item xs={12}>
           <Grid container justify="center"> 
+          <Grid>
             <Taller titulo="TALLER" accion="Agregar" />
-            <Taller  titulo="PIEZA" accion="Agregar"/>
+            </Grid>
+            <Grid>
+            <Taller titulo="PIEZA" accion="Agregar" />
+            </Grid>
+            <Grid>
             <Taller titulo="INTERNET" accion="Agregar"/>
+            </Grid>
           </Grid>
       </Grid>
     </Grid>

@@ -1,12 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
-import AddIcon from '@material-ui/icons/Add';
+import ActionButton from './ActionButton';
 
 const useStyles =  makeStyles((theme) => ({
   root: {
@@ -42,19 +39,7 @@ export const Taller: React.FC<Props> = ({ titulo }) => {
             {titulo}
           </Typography>
         </CardContent>
-        <CardActions >
-          <TextField fullWidth id="standard-textarea" label="Registro de servicio" placeholder="Placeholder" 
-                    name="descripcion" multiline />
-        </CardActions>
-        <CardActions >
-          <Button fullWidth
-        color="default"
-        className={classes.buton}
-        startIcon={<AddIcon />}
-      >
-        Registrar Servicio
-      </Button>
-        </CardActions>
+        <ActionButton />
       </Card>
 
     )
