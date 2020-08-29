@@ -21,9 +21,9 @@ interface  Props {
     openForm?: any;
     AgregarButton?: any;
     closeForm?: any;
-
+    handleKeyPress?: any;
 }
-export const ActionButton: React.FC<Props> = ({AddButton, AddForm, openForm, AgregarButton, closeForm}) => {
+export const ActionButton: React.FC<Props> = ({AddButton, AddForm, openForm, AgregarButton, closeForm, handleKeyPress}) => {
 
     const classes = useStyles();
     const [formOpen,setformOpen] = useState(false);
@@ -59,12 +59,16 @@ export const ActionButton: React.FC<Props> = ({AddButton, AddForm, openForm, Agr
         )
     }
 
+    handleKeyPress = (event: any) => {
+        if(event.which === 13){ closeForm(); }
+    }
+    
     AddForm = () =>{
         return (
             <CardContent >
             <CardActions >
             <TextField fullWidth id="standard-textarea" label="Registro de servicio" placeholder="Placeholder" 
-                  name="descripcion" multiline />
+                  name="descripcion" multiline onKeyPress={handleKeyPress}/>
             </CardActions>
             <AgregarButton />
             </CardContent>
